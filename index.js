@@ -62,25 +62,20 @@ function renderCurrentQuestionAndAnswers(index)
   $("main").html("");
   //Render the question on the main element
  $("main").append(`
- 	<section class="questionScreen">
-		<form class="questionForm">
-			<fieldset class="radio">
+   <section class="questionScreen">
+   <form class="questionForm">
+   <fieldset class="radio">
 		<legend>${questions[index].question}</legend>`);
-   //We created an <ul> to hold our answers A to D
- $("main").append("<ul>");
-   //Then we created <li>'s for each answer A to D'
-for (let i = 0; i < questions[index].answers.length; i++)
+ for (let i = 0; i < questions[index].answers.length; i++)
  {
-   $("main").append(`
-   <label>
-			<input type="radio" name="answers" value="${i}" required>${questions[index].answers[i]}
-	 </label><br>`);
+   $(".radio").append(`
+			<input type="radio" name="answers" value="${i}" required>${questions[index].answers[i]}<br>`);
  }
  //Then we close <ul>
-  $("main").append(`</section>
-		</form>
-		</fieldset>
-    <section>`);
+  $("main").append(`
+    </fieldset>
+    </form>
+    </section>`);
   
 }
 
